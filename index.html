@@ -83,14 +83,14 @@
     // Function to combine ppts and ppts_decimal
     function combinePpts(ppts, ppts_decimal) {
       const combinedMaxString = `${ppts}.${ppts_decimal}`;
-      const combinedMaxNumber = parseFloat(combinedString);
+      const combinedMaxNumber = parseFloat(combinedMaxString);
       return combinedMaxNumber;
     }
 
     // Function to combine fpts and fpts_decimal
     function combineFpts(fpts, fpts_decimal) {
       const combinedActualString = `${fpts}.${fpts_decimal}`;
-      const combinedActualNumber = parseFloat(combinedString);
+      const combinedActualNumber = parseFloat(combinedActualString);
       return combinedActualNumber;
     }
 
