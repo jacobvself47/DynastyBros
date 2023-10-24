@@ -61,9 +61,9 @@
               const ppts_decimal = roster.settings.ppts_decimal;
               const fpts = roster.settings.fpts;
               const fpts_decimal = roster.settings.fpts_decimal;
-              const combinedFpts = combineFpts(fpts, fpts_decimal);
-              const combinedPpts = combinePpts(ppts, ppts_decimal);
-              const percentage = calculatePercentage(combinedFpts, combinedPpts);
+              const combinedActual = combineFpts(fpts, fpts_decimal);
+              const combinedMax = combinePpts(ppts, ppts_decimal);
+              const percentage = calculatePercentage(combinedActual, combinedMax);
               const rosterName = getRosterName(roster.roster_id);
               
               // Create a new row for each roster
@@ -82,16 +82,16 @@
 
     // Function to combine ppts and ppts_decimal
     function combinePpts(ppts, ppts_decimal) {
-      const combinedString = `${ppts}.${ppts_decimal}`;
-      const combinedNumber = parseFloat(combinedString);
-      return combinedNumber;
+      const combinedMaxString = `${ppts}.${ppts_decimal}`;
+      const combinedMaxNumber = parseFloat(combinedString);
+      return combinedMaxNumber;
     }
 
     // Function to combine fpts and fpts_decimal
     function combineFpts(fpts, fpts_decimal) {
-      const combinedString = `${fpts}.${fpts_decimal}`;
-      const combinedNumber = parseFloat(combinedString);
-      return combinedNumber;
+      const combinedActualString = `${fpts}.${fpts_decimal}`;
+      const combinedActualNumber = parseFloat(combinedString);
+      return combinedActualNumber;
     }
 
     // Function to calculate the percentage
