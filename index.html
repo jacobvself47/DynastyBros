@@ -15,12 +15,10 @@
       border: 1px solid #000;
     }
   </style>
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.6/css/jquery.dataTables.min.css">
 </head>
 <body>
   <h1>Dynasty Bros Efficiency Metrics</h1>
-  <table id="roster-table">
+  <table id="roster-table" class="sortable">
     <thead>
       <tr>
         <th>Roster Name</th>
@@ -33,13 +31,7 @@
       <!-- Results will be displayed in this table -->
     </tbody>
   </table>
-
-  <!-- jQuery (required for DataTables) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- DataTables JavaScript -->
-  <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
-
+  <script src="sorttable.js"></script>
   <script>
     // A mapping of roster names based on roster ID
     const rosterNames = {
@@ -115,19 +107,9 @@
     function getRosterName(rosterId) {
       return rosterNames[rosterId] || `Roster ${rosterId}`;
     }
-    
+
     // Call the fetchRosters function when the page loads
     window.onload = fetchRosters;
-
-    // Initialize DataTables
-    $(document).ready(function () {
-      $('#roster-table').DataTable({
-        paging: true, // Enable pagination
-        searching: true, // Enable searching
-        ordering: true, // Enable sorting
-        // Additional DataTables options here
-      });
-    });
   </script>
 </body>
 </html>
